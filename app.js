@@ -5,6 +5,7 @@ if (process.env.NODE_ENV != "production") {
 const express = require("express");
 const app = express();
 const mongoose = require("mongoose");
+const Listing = require("./models/listing");
 const path = require("path");
 const methodOverride = require("method-override");
 const ejsMate = require("ejs-mate");
@@ -22,8 +23,8 @@ const reviewRouter = require('./routes/review.js');
 const userRouter = require('./routes/user.js');
 const { error } = require('console');
 
-const dbUrl = process.env.ATLASDB_URL;
-
+// const dbUrl = process.env.ATLASDB_URL;
+const dbUrl = 'mongodb://127.0.0.1:27017/wanderLust';
 
 main()
     .catch((err) => {
@@ -87,12 +88,18 @@ app.use((req, res, next) => {
     next();
 });
 
-
+// Home Route
+app.get("/", async (req, res) => {
+    // res.send("this is home route");
+    const allListings = await Listing.find({});
+    res.render("./listings/index.ejs", { allListings });
+});
 
 
 app.use("/listings", listingRouter);
 app.use("/listings/:id/reviews", reviewRouter);
 app.use("/", userRouter);
+
 
 
 // All Route 
