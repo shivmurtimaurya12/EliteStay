@@ -34,8 +34,9 @@ router.route("/:id")
 router.get("/:id/edit", isLoggedIn,
     wrapAsync(listingController.renderEditForm));
 
-
-
+// Destination Route
+router.route("/destination")
+    .post(wrapAsync(listingController.destination));
 
 
 

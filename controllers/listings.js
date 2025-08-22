@@ -12,7 +12,6 @@ module.exports.index = async (req, res) => {
 }
 
 module.exports.renderNewForm = (req, res) => {
-
     res.render("./listings/new.ejs");
 }
 
@@ -104,4 +103,11 @@ module.exports.destroyListing = async (req, res) => {
     await Listing.findByIdAndDelete(id);
     req.flash("success", "Listing Deleted Successfully !");
     res.redirect("/listings");
-}    
+}
+
+module.exports.destination = async (req, res) => {
+    const { location } = req.body.listing;
+    let allListings = await Listing.find({});
+    res.render("./listings/destiListing.ejs", { allListings, location });
+
+}

@@ -24,6 +24,7 @@ const userRouter = require('./routes/user.js');
 const { error } = require('console');
 
 const dbUrl = process.env.ATLASDB_URL;
+
 main()
     .catch((err) => {
         console.log(err);
@@ -92,7 +93,6 @@ app.get("/", async (req, res) => {
     const allListings = await Listing.find({});
     res.render("./listings/index.ejs", { allListings });
 });
-
 
 app.use("/listings", listingRouter);
 app.use("/listings/:id/reviews", reviewRouter);
