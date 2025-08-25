@@ -65,24 +65,28 @@
         alt="listing_image"
         style="height: 20rem"
       />
-      <div class="card-img-overlay"><span class="cardImgOveray">Guest favourite</span>
-        <span id="favouriteIcon"><i class="fa-regular fa-heart"></i></span>
+      <div class="card-img-overlay">
+        <span class="cardImgOveray">Guest favourite</span>
       </div>
+      <div class="card-img-overlay">
+        <span id="favouriteIcon"><i class="fa-regular fa-heart"></i></span>
+       
+      </div>
+
 
 
       <div class="card-body">
         <p class="card-text">
-          <b><%= listings.title %></b><br />
+          l <b><%= listings.title %></b><br />
           &#8377;<%=listings.price.toLocaleString("en-IN")%>/night
           <i class="tax-info">&nbsp;&nbsp; +18% GST</i>
-           &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-           &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-         
-           <b >&#9734;<i><%=listings.location%></i></b>
+          &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+          &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+
+          <b>&#9734;<i><%=listings.location%></i></b>
         </p>
       </div>
     </div>
   </a>
   <%}%>
-  
 </div>

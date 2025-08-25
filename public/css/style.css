@@ -94,13 +94,20 @@ body {
 .listing-card {
     border: none !important;
     margin-bottom: 4rem;
+  
 }
+
+.listing-card:hover{
+transform: scale(1.03);
+}
+
 
 .card-img-top {
     border-radius: 1rem !important;
     width: 100% !important;
     object-fit: cover !important;
 }
+
 
 .card-body {
     padding: 0 !important;
@@ -118,7 +125,7 @@ body {
 
 /* card overlay effect */
 card-img-overlay {
-    width: 100%;
+    width:100%;
 
 }
 
@@ -131,14 +138,19 @@ card-img-overlay {
     border-radius: 2rem;
     font-weight: bolder;
     font-size: 0.912rem;
-
+    
 }
 
 #favouriteIcon{
     font-size:1.3rem !important;
-    margin-left: 10rem ;
+    margin-left: 15rem ;
    color: white;
   
+}
+#favouriteIcon:hover{
+  font-size: 1.5rem !important;
+  transition: 0.25s ease-out 0.25s;
+  color: #fe424d;
 }
 
 /* Add page */

@@ -23,7 +23,8 @@ const reviewRouter = require('./routes/review.js');
 const userRouter = require('./routes/user.js');
 const { error } = require('console');
 
-const dbUrl = process.env.ATLASDB_URL;
+// const dbUrl = process.env.ATLASDB_URL;
+const dbUrl = 'mongodb://127.0.0.1:27017/wanderLust';
 
 main()
     .catch((err) => {
