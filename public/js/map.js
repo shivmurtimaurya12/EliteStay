@@ -9,6 +9,7 @@ const map = new mapboxgl.Map({
     zoom: 9, // starting zoom
 });
 
+// console.log(listing);
 
 
 const marker1 = new mapboxgl.Marker({ color: 'red' })
